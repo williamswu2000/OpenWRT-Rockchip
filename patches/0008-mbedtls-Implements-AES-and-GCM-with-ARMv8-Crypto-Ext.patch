@@ -1,22 +1,22 @@
 From 9fcf01be4e89e72887b58253ba5d2b2601bad7dc Mon Sep 17 00:00:00 2001
-From: quintus-lab<noreply@github.com>
+From: Quintus Chu <ardanzhu@gmail.com>
 Date: Tue, 9 Mar 2021 10:21:17 +0800
 Subject: [PATCH] mbedtls: Implements AES and GCM with ARMv8 Crypto Extensions
-
  A compact patch that provides AES and GCM implementations that utilize the
  ARMv8 Crypto Extensions. The config flag is MBEDTLS_ARMV8CE_AES_C, which is
  disabled by default as we don't do runtime checking for the feature. The new
  implementation lives in armv8ce_aes.c.
- Provides similar functionality to https://github.com/ARMmbed/mbedtls/pull/432
 
- Thanks to Barry O'Rourke and others for that contribtion.
- Tested on a Cortex A53 device and QEMU. On a midrange phone the real AES-GCM 
- throughput increases about 4x, while raw AES speed is up to 10x faster.
- [updated Makefile to enable this function, adjusted commit message]
- Signed-off-by: Tianling Shen <cnsztl@immortalwrt.org>
- 
- modified:   package/libs/mbedtls/Makefile
- new file:   package/libs/mbedtls/patches/100-Implements-AES-and-GCM-with-ARMv8-Crypto-Extensions.patch
+Provides similar functionality to https://github.com/ARMmbed/mbedtls/pull/432
+Thanks to Barry O'Rourke and others for that contribtion.
+
+Tested on a Cortex A53 device and QEMU. On a midrange phone the real AES-GCM
+throughput increases about 4x, while raw AES speed is up to 10x faster.
+
+[updated Makefile to enable this function, adjusted commit message]
+Signed-off-by: Tianling Shen <cnsztl@immortalwrt.org>
+	modified:   package/libs/mbedtls/Makefile
+	new file:   package/libs/mbedtls/patches/100-Implements-AES-and-GCM-with-ARMv8-Crypto-Extensions.patch
 ---
  package/libs/mbedtls/Makefile                 |  19 +
  ...and-GCM-with-ARMv8-Crypto-Extensions.patch | 401 ++++++++++++++++++
