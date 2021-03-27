@@ -25,7 +25,11 @@ patch -p1 < ../patches/1001-dnsmasq_add_filter_aaaa_option.patch
 cp -f ../patches/910-mini-ttl.patch package/network/services/dnsmasq/patches/
 cp -f ../patches/911-dnsmasq-filter-aaaa.patch package/network/services/dnsmasq/patches/
 
-#Fullcone patch
+#test 8152 patch
+cp -f ../patches/993-board-nanopi-r2s-r8152-customise-leds.patch target/linux/rockchip/patches-5.4/
+cp -f ../patches/994-board-nanopi-r2s-r8152-mac-from-dt.patch target/linux/rockchip/patches-5.4/
+
+#FULLCONENAT patch
 patch -p1 < ../patches/1002-add-fullconenat-support.patch
 patch -p1 < ../patches/1003-luci-app-firewall_add_fullcone.patch
 
