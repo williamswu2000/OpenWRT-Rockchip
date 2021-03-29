@@ -20,6 +20,9 @@ patch -p1 < ../patches/0007-optimize_for_rk3399.patch
 # add AES and GCM with ARMv8 Crypto support
 patch -p1 < ../patches/0008-mbedtls-Implements-AES-and-GCM-with-ARMv8-Crypto-Ext.patch
 
+# rockchip: add drm and lima gpu driver
+patch -p1 < ../patches/0011-rockchip-add-drm-and-lima-gpu-driver.patch
+
 #dnsmasq aaaa filter
 patch -p1 < ../patches/1001-dnsmasq_add_filter_aaaa_option.patch
 cp -f ../patches/910-mini-ttl.patch package/network/services/dnsmasq/patches/
