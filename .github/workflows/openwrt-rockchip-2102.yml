@@ -5,8 +5,8 @@
 name: OpenWRT-21.02
 
 on:
-#  release:
-#    types: published
+  release:
+    types: published
   push:
     branches:
       - 21.02
